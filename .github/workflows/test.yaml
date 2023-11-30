@@ -1,0 +1,16 @@
+---
+on:
+  push:
+
+jobs:
+  test:
+    name: Test
+    runs-on: "ubuntu-latest"
+    steps:
+    - name: Check out
+      uses: actions/checkout@v4
+    - name: Do test
+      run: bash ./test/test.sh
+    - name: Run ShellCheck
+      uses: ludeeus/action-shellcheck@master
+
